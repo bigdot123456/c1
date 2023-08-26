@@ -28,3 +28,7 @@ class FSM extends Module {
 
   io.out := RegNext((state === s3) & io.in, 0.B)
 }
+
+object moduleFSMMain extends App {
+  (new ChiselStage).emitVerilog(new FSM, args)
+}
